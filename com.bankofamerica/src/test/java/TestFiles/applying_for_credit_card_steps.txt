@@ -1,0 +1,5 @@
+1- click on credit cards link
+2- click on card for students.
+3- click apply button.
+4- fill-out the form
+5- click save and continue button

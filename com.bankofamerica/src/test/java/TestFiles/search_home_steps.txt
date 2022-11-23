@@ -1,0 +1,5 @@
+1- click on home loan link
+2- click on find home.
+3- search for city.
+4- select city
+5- click search button

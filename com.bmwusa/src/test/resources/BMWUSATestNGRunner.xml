@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="BMWUSA" verbose="1" >
+
+    <listeners>
+        <listener class-name="listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://bmwusa.com"/>
+
+    <test name="Smoke">
+        <classes>
+            <class name="TestFiles.TestGetQuote"/>
+            <class name="TestFiles.TestRegistration"/>
+            <class name="TestFiles.TestChoosingModels"/>
+            <class name="TestFiles.TestNavigateToTheBuildingPage"/>
+            <class name="TestFiles.TestCustomizeCar"/>
+            <class name="TestFiles.TestShopNewVehicle"/>
+            <class name="TestFiles.TestEstimatePayment"/>
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="FreeCRM" verbose="1" >
+
+    <listeners>
+        <listener class-name="listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="https://freecrm.com"/>
+    <test name="Smoke">
+        <classes>
+            <class name="TestFiles.TestLogin"/>
+            <class name="TestFiles.TestAddContact"/>
+            <class name="TestFiles.TestEditContact"/>
+            <class name="TestFiles.TestDeleteContat"/>
+            <class name="TestFiles.TestAddEventToCalendar"/>
+            <class name="TestFiles.TestEditEventCalendar"/>
+            <class name="TestFiles.TestDeleteEventCalendar"/>
+            <class name="TestFiles.TestAddDocument"/>
+            <class name="TestFiles.TestDeleteDocument"/>
+            <class name="TestFiles.TestDragAndDrop"/>
+
+        </classes>
+    </test>
+</suite>

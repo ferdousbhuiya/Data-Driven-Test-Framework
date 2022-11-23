@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Verizon" verbose="1" >
+
+    <listeners>
+        <listener class-name="listeners.AnnotationTransformer"/>
+    </listeners>
+
+    <parameter name="browser" value="chrome"/>
+    <parameter name="url" value="http://verizon.com"/>
+<test name="Test">
+
+    <classes>
+        <class name="TestFiles.TestAddSmartPhoneToCart"></class>
+        <class name="TestFiles.TestChattingWithSupport"></class>
+        <class name="TestFiles.TestChoosePlanForAddedPhone"></class>
+        <class name="TestFiles.TestFindStoresLocation"></class>
+        <class name="TestFiles.TestRemoveItemFromCart"></class>
+        <class name="TestFiles.TestSearchingForItem"></class>
+        <class name="TestFiles.TestShopCharger"></class>
+        <class name="TestFiles.TestSignIn"></class>
+        <class name="TestFiles.TestSignOut"></class>
+    </classes>
+</test>
+</suite>

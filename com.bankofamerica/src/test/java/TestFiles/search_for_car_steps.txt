@@ -1,0 +1,5 @@
+1- click on auto loan link
+2- click on shop for car.
+3- enter zipCode.
+4- click shop for car button
+5- click shop now

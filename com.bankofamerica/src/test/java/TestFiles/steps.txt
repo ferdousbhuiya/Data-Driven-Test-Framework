@@ -1,0 +1,8 @@
+1-  click wealth management services
+2-  enter  first name
+3-  enter  first lastname
+4-  enter email address
+5-  confirm email address
+6-  enter email address
+7-  enter zipCode
+8- click get started Button
