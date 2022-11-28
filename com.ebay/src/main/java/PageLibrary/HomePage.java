@@ -41,10 +41,9 @@ public class HomePage extends BasePage {
         return new MotorsPage();
     }
 
-    public SearchResultPage searchForItems() throws SQLException {
-        String item = "SELECT word FROM locations.searchingword where id =1;";
+    public SearchResultPage searchForItems(String itemName) {
         waitForVisibilityOfElement(searchInput);
-        sendKeysToElement(searchInput, db.executeQueryReadOne(item).toString());
+        sendKeysToElement(searchInput, itemName);
         moveToElementAndClick(searchButton);
         return new SearchResultPage();
 

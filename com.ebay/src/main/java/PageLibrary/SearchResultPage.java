@@ -9,7 +9,9 @@ import java.util.List;
 
 public class SearchResultPage extends BasePage {
 
-    @FindBy(xpath = "//ul[@class='srp-results srp-list clearfix']/li")
+
+    //Old one =
+    @FindBy(xpath = "(//div[@class='s-item__wrapper clearfix'])")
     public List<WebElement> allItemsResults;
 
     @FindBy(xpath = "//div[@class='srp-river srp-layout-inner']")
@@ -21,8 +23,8 @@ public class SearchResultPage extends BasePage {
     }
 
     public ItemPage selectItem(){
-        waitForVisibilityOfElement(allItemsResults.get(2));
-        moveToElementAndClick(allItemsResults.get(2).findElement(By.tagName("a")));
+        waitForVisibilityOfElement(allItemsResults.get(3));
+        moveToElementAndClick(allItemsResults.get(3));
         switchToTab();
         return  new ItemPage();
     }

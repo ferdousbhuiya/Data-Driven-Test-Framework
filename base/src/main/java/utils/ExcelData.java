@@ -1,9 +1,6 @@
 package utils;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellType;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -55,11 +52,12 @@ public class ExcelData {
 
         for (int i = 1; i <= numberOfRows; i++) {
             row = sheet.getRow(i);
-            for (int j = 0; j < numberOfCol; j++) {
-                cell = row.getCell(j);
+            for (int n = 0; n < numberOfCol; n++) {
+                cell = row.getCell(n);
                 String cellData = getCellValue(cell);
-                data[i-1][j] = cellData;
+                data[i - 1][n] = cellData;
             }
+
         }
         return data;
     }

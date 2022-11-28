@@ -24,19 +24,26 @@ public class TestData extends BasePage {
         return data;
     }
 
+
+
+    // Data Retrive from Mysql
     @DataProvider
-    public Object[][] getDataFromDatabase() throws SQLException {
-        Object[][] data ;
-        DataBaseutils dataBaseutils = new DataBaseutils();
-        String server = "localhost";
-        int portNumber = 3306;
-        String database = "Guru99TestData";
-        String usernam = "root";
-        String password = "Silme123@";
-        dataBaseutils.openConnection(server,portNumber,database, usernam, password);
+    public Object[][] datafromDatabase() throws SQLException
+    {
         String sqlQuery = "SELECT * FROM Guru99TestData.Users;";
-        data = dataBaseutils.executeSelectQuery(sqlQuery);
-        dataBaseutils.closeConnection();
+        Object[][] data = db.executeSelectQueryForDataSet(sqlQuery);
+        return  data;
+    }
+
+
+    //Data Retrive from Excell
+
+    @DataProvider
+    public Object[][] dataFromExcell()
+    {
+        String [][] data;
+        data = excel.readStringArrays("Sheet1");
         return data;
     }
+
 }

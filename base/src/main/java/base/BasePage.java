@@ -77,7 +77,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://demo.guru99.com/v4/") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://ebay.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -408,6 +408,13 @@ public class BasePage {
         Random random = new Random();
         int a = random.nextInt(b);
         return a;
+    }
+    public void clickAnElementMatchingText(List<WebElement> elements, String menuItem){
+        WebElement element = elements.stream().parallel()
+                .filter(e -> e.getText().equalsIgnoreCase(menuItem))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Element with Text "+menuItem+" not present"));
+        element.click();
     }
 
 

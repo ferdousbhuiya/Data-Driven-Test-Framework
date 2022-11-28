@@ -17,6 +17,8 @@ public class BrandJeansPage extends BasePage {
     public BrandJeansPage(){
         PageFactory.initElements(driver,this);
     }
+
+
     public ItemPage selectJeans(){
         waitForVisibilityOfElement(listOfAllJeans.get(2));
         clickOnElement(listOfAllJeans.get(2));

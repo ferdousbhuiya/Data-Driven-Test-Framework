@@ -10,7 +10,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class TestNavigateToCreateAccount extends BasePage {
     @Test
-    public void testSignUp() throws SQLException, SQLException {
+    public void testSignUp() throws  SQLException {
         HomePage homePage =new HomePage();
         homePage.navigateToCreateAnAccount();
         waitForVisibilityOfElement(HomePage.createAccountText);

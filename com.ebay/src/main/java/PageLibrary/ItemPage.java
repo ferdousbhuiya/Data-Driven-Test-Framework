@@ -8,8 +8,21 @@ import java.util.List;
 
 public class ItemPage extends BasePage {
 
-    @FindBy(id = "isCartBtn_btn")
+   //
+
+    //id = "isCartBtn_btn"    old one
+    @FindBy(xpath = "(//a[@class = 'ux-call-to-action fake-btn fake-btn--fluid fake-btn--primary'])[2]")
     public WebElement addToCartButton;
+
+    @FindBy(xpath = "//select[@aria-label='Please select a Size']")
+    public WebElement sizeDropdownBox;
+
+    @FindBy(xpath = "//select[@aria-label='Please select a Color']")
+    public WebElement colorDropdownBox;
+
+    @FindBy(xpath = "//span[contains(text(),'Go to cart')]")
+    public WebElement GotoCartBtn;
+
     @FindBy(id = "atcRedesignId_btn")
     public WebElement addJeansToCartButton;
     @FindBy(xpath = "//h2[contains(text(),'1 item added to cart')]")
@@ -20,6 +33,8 @@ public class ItemPage extends BasePage {
 
     @FindBy(xpath = "//button[contains(text(),'No thanks')]")
     public WebElement notThanksButton;
+
+    //(//button[@class='fake-link'])[2]    /Remove Button
 
     @FindBy(xpath = "//div[@class='listsummary']/div[2]/span[2]//button")
     public WebElement removeButton;
@@ -43,8 +58,14 @@ public class ItemPage extends BasePage {
     public ItemPage addToCart() {
         waitForVisibilityOfElement(addToCartButton);
         clickOnElement(addToCartButton);
-        waitForVisibilityOfElement(notThanksButton);
-        clickOnElement(notThanksButton);
+        clickOnElement(sizeDropdownBox);
+        selectFromDropdownByIndex(sizeDropdownBox,3);
+        clickOnElement(colorDropdownBox);
+        selectFromDropdownByIndex(colorDropdownBox, 3);
+        clickOnElement(addToCartButton);
+        clickOnElement(GotoCartBtn);
+        //waitForVisibilityOfElement(notThanksButton);
+        //clickOnElement(notThanksButton);
         return new ItemPage();
     }
 
